@@ -1,0 +1,194 @@
+.content {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-comment {
+    width: 100%;
+    min-height: auto;
+    border-radius: 8px;
+    background: var(--White, #FFF);
+    padding: 24px;
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    position: relative;
+    grid-template-areas: "c i";
+
+    @media (max-width: 550px) {
+        grid-template-areas: "i" "c";
+    }
+
+    .counter-grup-item {
+        grid-area: c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 40px;
+        height: 100px;
+        border-radius: 10px;
+        background: var(--Very-Light-Gray, #F5F6FA);
+
+        @media (max-width: 550px) {
+            flex-direction: row;
+            width: 100px;
+            height: 40px;
+        }
+
+        span {
+            color: #5357B6;
+        }
+
+        .add_counter,
+        .remove_counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+    }
+
+    .item-comment-content {
+        grid-area: i;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        .header_item_comment {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            img {
+                width: 32px;
+                height: 32px;
+                border-radius: 100%;
+            }
+
+            h4 {
+                color: #334253;
+                font-family: Rubik;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin: 0;
+            }
+
+            .data_comment {
+                color: #67727E;
+                font-family: Rubik;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+
+        p {
+            margin: 0;
+            color: #67727E;
+            font-family: Rubik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+
+    .button-grup {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        position: absolute;
+
+        height: 20px;
+        
+        @media (min-width: 550px) {
+            top: 24px;
+            right: 24px;
+        }
+
+        @media (max-width: 550px) {
+            bottom: 34px;
+            right: 24px;
+        }
+
+
+        .delete {
+            color: #ED6368;
+            font-family: Rubik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            transition: color .3s ease;
+
+            path {
+                transition: fill .3s ease;
+            }
+
+            &:hover {
+                color: #FFB8BB;
+
+                path {
+                    fill: #FFB8BB;
+                }
+            }
+        }
+
+        .edit,
+        .reply {
+            color: #5357B6;
+            font-family: Rubik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            transition: color .3s ease;
+
+            path {
+                transition: fill .3s ease;
+            }
+
+            &:hover {
+                color: #C5C6EF;
+
+                path {
+                    fill: #C5C6EF;
+                }
+            }
+        }
+    }
+}
+
+.button-counter {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 10px 15px;
+
+    path {
+        transition: fill .3s ease;
+    }
+
+    &:hover path {
+        fill: #5357B6;
+    }
+}
+
+.button-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background-color: transparent;
+}
